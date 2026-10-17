@@ -1,0 +1,222 @@
+/*
+  styles/style.css
+  Стили для главной страницы Food Construct — лабораторная работа №1
+  Применены требования: универсальный селектор, типографика Montserrat, стили для блоков, таблицы, ссылок и футера.
+*/
+
+/* Подключаем шрифты через index.html (Montserrat). Применяем ко всем текстовым элементам */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --max-width: 1200px;
+  --accent-color: #333;
+  --muted: #666;
+  --card-bg: #ffffff;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Контейнер для центрирования и ограничения ширины контента */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Базовые текстовые стили */
+body,
+h1,
+h2,
+p,
+li,
+td,
+th {
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--accent-color);
+}
+
+body {
+  background-color: #f5f5f5;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Header */
+header {
+  background: transparent;
+  padding: 24px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px; /* по требованию макета */
+}
+
+nav a {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--accent-color);
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.15s ease-in-out;
+}
+
+nav a:first-child {
+  margin-left: 0;
+}
+
+nav a:hover {
+  color: tomato;
+}
+
+/* Основные секции в виде карточек */
+main {
+  padding: 40px 0 80px 0;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Изображение */
+#about img {
+  display: block;
+  width: 100%;
+  height: 400px; /* явно заданная высота */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+/* Список преимуществ */
+#advantages ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* Таблица */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* обязательно */
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+th {
+  font-weight: 700; /* заголовки жирные */
+  text-align: center; /* th по центру */
+  background: #fafafa;
+}
+
+/* td по-умолчанию слева, но номер и цена центрируем */
+td {
+  text-align: left;
+}
+
+td:first-child,
+td:last-child {
+  text-align: center;
+}
+
+/* Ссылки (общие правила) */
+a {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: tomato;
+}
+
+/* Футер */
+footer {
+  background-color: black;
+  color: white;
+  padding: 32px 0;
+}
+
+.footer-inner {
+  text-align: center;
+  padding: 0 60px;
+}
+
+footer p {
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 18px; /* крупный номер телефона */
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: tomato;
+}
+
+/* Отдельные мелкие правки для мобильных */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav a {
+    margin-left: 12px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
